@@ -50,6 +50,7 @@
             <p class="text-sm text-gray-500 italic">
               Con todo mi cariño
             </p>
+            <a class="blok text-center p-10 text-sm text-gray-500 italic" href="https://www.tiktok.com/@really.nails">@really.nails</a>
           </div>
         </div>
       </div>
@@ -58,7 +59,6 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
 import { gsap } from 'gsap'
 
 const cardInner = ref(null)
