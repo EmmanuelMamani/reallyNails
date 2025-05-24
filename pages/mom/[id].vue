@@ -25,7 +25,7 @@
 
           <div class="relative z-10 text-center">
             <div class="text-5xl mb-3">💌</div>
-            <h2 class="text-2xl font-bold mb-1">Para Mamá</h2>
+            <h2 class="text-2xl font-bold mb-1">Para {{ card?.to ?? '...' }}</h2>
             <p class="text-sm opacity-90">Toca para abrir</p>
           </div>
 
@@ -45,10 +45,10 @@
               ¡Feliz Día de la Madre!
             </h1>
             <p class="text-gray-700 mb-4">
-              Gracias por tu amor incondicional y tu ternura infinita 💖
+              {{ card?.description??'..' }}
             </p>
             <p class="text-sm text-gray-500 italic">
-              Con todo mi cariño
+              Con todo cariño {{ card?.from??'..' }}
             </p>
             <a class="blok text-center p-10 text-sm text-gray-500 italic" href="https://www.tiktok.com/@really.nails">@really.nails</a>
           </div>
@@ -65,6 +65,10 @@ const cardInner = ref(null)
 const cardContainer = ref(null)
 const flipped = ref(false)
 const confettiStyles = ref([])
+const route = useRoute()
+const id = route.params.id
+const supabase = useSupabaseClient()
+const card=ref(null)
 
 const flipCard = () => {
   const rotation = flipped.value ? 0 : 180
@@ -114,6 +118,20 @@ const unhoverCard = () => {
   })
 }
 
+async function fecthCard() {
+  const { data, error: err } = await supabase
+    .from('mom_cards')
+    .select('*')
+    .eq('id', id)
+    .single()
+
+  if (err) {
+    error.value = err.message
+  } else {
+    card.value = data 
+  }
+}
+
 onMounted(() => {
   // Solo en cliente: genera los estilos aleatorios
   confettiStyles.value = Array.from({ length: 20 }, () => ({
@@ -144,6 +162,7 @@ onMounted(() => {
     yoyo: true,
     ease: 'sine.inOut',
   })
+  fecthCard()
 })
 </script>
 
