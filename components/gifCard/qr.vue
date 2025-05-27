@@ -25,7 +25,7 @@ const props = defineProps({
 let qrCode = new QRCodeStyling({
   width: 300,
   height: 300,
-  data: `https://really-nails.vercel.app/mom/${props.id}`,
+  data: `https://really-nails.vercel.app/gifCard/${props.id}`,
   image: "/img/logoRnBlack.png",
   dotsOptions: {
     color: "#000000",
