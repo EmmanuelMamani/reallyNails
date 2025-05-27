@@ -26,27 +26,23 @@
 
           <div class="relative w-full h-full">
             <!-- Imágenes decorativas en las esquinas -->
-            <img src="/img/Flower1.png" class="w-28 absolute -top-10 -left-12 rotate-[10deg]" />
-            <img src="/img/Flower2.png" class="w-28 absolute -top-10 -right-10 -rotate-[12deg]" />
+            <img src="/img/Flower1.png" class="w-28 absolute -top-14 -left-12 rotate-[10deg]" />
+            <img src="/img/Flower2.png" class="w-28 absolute -top-14 -right-10 -rotate-[12deg]" />
             <img src="/img/Heart.png" class="w-16 absolute -bottom-7 -left-10 rotate-[5deg]" />
             <img src="/img/Heart2.png" class="w-20 absolute -bottom-10 -right-10 -rotate-[8deg]" />
 
             <!-- Contenido del mensaje -->
             <div class="flex flex-col items-center justify-center text-center px-6 py-10">
-              <h1 class="text-2xl font-extrabold text-rose-500 mb-3 tracking-wider uppercase">
+              <h1 class="text-2xl font-extrabold text-rose-500  tracking-wider uppercase">
                 ¡Felicidades {{ card?.to ?? '...' }}!
               </h1>
               <p class="text-base text-slate-200 leading-relaxed max-w-md">
                 {{ card?.description ?? 'Te deseo un día increíble lleno de amor y alegría.' }}
               </p>
+              <p class="text-sm text-rose-500 italic mt-2">
+                Con cariño, @really.nails
+              </p>
             </div>
-          </div>
-
-          <!-- Firma -->
-          <div>
-            <p class="text-sm text-rose-500 italic mb-4">
-              Con cariño, @really.nails
-            </p>
           </div>
         </div>
 
