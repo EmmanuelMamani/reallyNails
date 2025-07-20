@@ -3,7 +3,7 @@
     <h3 class="text-center text-xl">Servicios</h3>
 
     <div class="flex justify-end w-11/12 mx-auto space-x-3">
-      <ServiceWeekPicker @semana-seleccionada="filtrarPorSemana" />
+      <ServiceWeekPicker class="w-3/5" @semana-seleccionada="filtrarPorSemana" />
       <ServiceCreate @service-created="agregarServicio" />
     </div>
 

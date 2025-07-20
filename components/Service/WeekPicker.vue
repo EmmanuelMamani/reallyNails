@@ -1,15 +1,18 @@
 <template>
-  <div class="flex items-center gap-2">
-    <el-date-picker
-        v-model="selectedDate"
-        type="date"
-        format="[Semana] WW, YYYY"
-        value-format="YYYY-MM-DD"
-        placeholder="Selecciona una fecha"
-        @change="updateWeekInfo"
-    />
-    <el-button type="primary" @click="emitWeek">Filtrar</el-button>
-    <div v-if="currentWeekInfo" class="ml-2 text-sm text-gray-500">
+  <div>
+    <div class="flex items-center gap-2">
+      <el-date-picker
+          v-model="selectedDate"
+          type="date"
+          format="[Semana] WW, YYYY"
+          value-format="YYYY-MM-DD"
+          placeholder="Selecciona una fecha"
+          @change="updateWeekInfo"
+          size="small"
+      />
+      <el-button type="primary" @click="emitWeek" >Filtrar</el-button>
+    </div>
+    <div v-if="currentWeekInfo" class="ml-2 text-xs text-gray-500">
       {{ currentWeekInfo }}
     </div>
   </div>
